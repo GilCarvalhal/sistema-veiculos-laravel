@@ -76,7 +76,26 @@
                 </div>
             </div>
 
-            <div class="col-9">teste 2</div>
+            <div class="col-9">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{ asset('./assets/images/lamborghini-sian-fkp-37.jpg') }}" alt=""
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title mb-2">Título</h5>
+                                <p class="card-text text-secondary mb-2">Subtítulo</p>
+                                <p class="card-text text-secondary mb-2">Subtítulo</p>
+
+                                <h5 class="mb-5">Preço</h5>
+                                <div class="actions">
+                                    <button class="btn btn-primary">Entrar em contato</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
