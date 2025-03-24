@@ -6,11 +6,11 @@
 ## Instalação do pacote de dependências composer:
 >> composer install
 
-## Instalação do Laravel UI, pacote que fornece scaffolding básico para autenticação e estrutura front-end:
->> composer require laravel/ui
+## Aplicar o comando abaixo para clonar o arquivo .env no projeto:
+>> cp .env.example .env
 
-## Instalar a estrutura frontend com bootstrap e gerar o sistema de autenticação:
->> php artisan ui bootstrap --auth
+## Comando para gerar a chave de criptografia:
+>> php artisan key:generate
 
 ## Utilizar dois comandos para inicialização em uso local no terminal:
 >> npm run dev && php artisan serve
