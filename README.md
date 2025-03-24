@@ -12,5 +12,5 @@
 ## Comando para gerar a chave de criptografia:
 >> php artisan key:generate
 
-## Utilizar dois comandos para inicialização em uso local no terminal:
+## Utilizar dois comandos no terminal para inicialização em uso local:
 >> npm run dev && php artisan serve
