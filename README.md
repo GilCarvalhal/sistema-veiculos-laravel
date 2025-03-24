@@ -3,6 +3,9 @@
 ## Instalação do pacote de depedências npm:
 >> npm install
 
+## Instalação do pacote de dependências composer:
+>> composer install
+
 ## Instalação do Laravel UI, pacote que fornece scaffolding básico para autenticação e estrutura front-end:
 >> composer require laravel/ui
 
