@@ -13,7 +13,7 @@
                             <div class="mb-3">
                                 <label for="brand" class="form-label">Marca</label>
                                 <input type="text" class="form-control" id="brand" name="filter[brand]"
-                                    autocomplete="off" value="{{ request()->filter['brand'] ?? '' }}">
+                                    autocomplete="off" value="{{ request()->filter['brand'] ?? '' }}" console.log(value)>
                             </div>
 
                             <div class="mb-3">
