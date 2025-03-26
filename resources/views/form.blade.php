@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 {{-- enctype é usado quando for trabalhar com upload de arquivos --}}
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('vehicle.store') }}">
                     {!! csrf_field() !!}
                     <div class="row">
                         <div class="form-group col-sm-12 col-md-6 mb-3">
@@ -140,7 +140,8 @@
                         <div class="form-group col-sm-12 col-md-4 mb-3">
                             <label for="contact_name">Nome do vendedor</label>
                             <input type="text" class="form-control" id="contact_name" name="contact_name"
-                                autocomplete="off" value="{{ isset($item) ? $item->contact_name : old('contact_name') }}">
+                                autocomplete="off"
+                                value="{{ isset($item) ? $item->contact_name : old('contact_name') }}">
 
                             @error('contact_name')
                                 <div class="alert alert-danger mt-3">

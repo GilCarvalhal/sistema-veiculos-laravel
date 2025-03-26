@@ -11,7 +11,13 @@ class VehicleController extends Controller
         return view("index");
     }
 
-    public function create() {
+    public function create()
+    {
         return view("form");
+    }
+
+    public function store(Request $request)
+    {
+        dd("Aqui!", $request);
     }
 }
