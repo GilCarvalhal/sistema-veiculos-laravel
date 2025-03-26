@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\VehicleRequest;
 
 class VehicleController extends Controller
 {
@@ -16,8 +16,9 @@ class VehicleController extends Controller
         return view("form");
     }
 
-    public function store(Request $request)
+    public function store(VehicleRequest $request)
     {
-        dd("Aqui!", $request);
+        $data = $request->validated();
+        dd("Aqui!", $data);
     }
 }
