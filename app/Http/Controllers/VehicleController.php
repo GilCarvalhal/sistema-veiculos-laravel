@@ -28,8 +28,14 @@ class VehicleController extends Controller
     {
         $data = $request->validated();
 
+        if ($request->file("image")) {
+            $file = $request->file("image");
+            $filename = date("YmdHi") . $file->getClientOriginalName();
+            $file->move(public_path("/assets/images"), $filename);
+            $data["image"] = $filename;
+        }
+
         $insert = $this->vehicleRepository->store($data);
-        // dd("Aqui", $insert);
 
         if (!$insert) {
             return redirect()->back()->with("error", "Erro ao cadastrar veículo");
