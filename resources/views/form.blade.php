@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group col-sm-12 col-md-6 mb-3">
-                            <label for="brand">Nome</label>
+                            <label for="brand">Marca</label>
                             <input type="text" class="form-control" id="brand" name="brand" autocomplete="off"
                                 value="{{ isset($item) ? $item->brand : old('brand') }}">
 
@@ -80,15 +80,15 @@
                             <label for="type">Tipo de veículo</label>
                             <select name="type" id="type" class="form-select">
                                 <option value="">Selecione uma opção</option>
-                                <option value="" @if ((isset($item) && $item->type == 'Novo') || (isset($item) && $item->type == old('type'))) selected @endif>
+                                <option value="Novo" @if ((isset($item) && $item->type == 'Novo') || (isset($item) && $item->type == old('type'))) selected @endif>
                                     Novo
                                 </option>
-                                <option value="" @if ((isset($item) && $item->type == 'Usado') || (isset($item) && $item->type == old('type'))) selected @endif>
+                                <option value="Usado" @if ((isset($item) && $item->type == 'Usado') || (isset($item) && $item->type == old('type'))) selected @endif>
                                     Usado
                                 </option>
                             </select>
 
-                            @error('kilometers')
+                            @error('type')
                                 <div class="alert alert-danger mt-3">
                                     {{ $message }}
                                 </div>

@@ -28,7 +28,7 @@ class VehicleRequest extends FormRequest
             'kilometers' => 'required|integer',
             'city' => 'required',
             'type' => 'required',
-            'price' => 'required|float',
+            'price' => 'required|integer',
             'description' => 'nullable',
             'image' => 'nullable',
             'contact_name' => 'required|string|min:3',
@@ -55,7 +55,7 @@ class VehicleRequest extends FormRequest
             'type.required' => 'O tipo do veículo é obrigatório.',
 
             'price.required' => 'O preço do veículo é obrigatório.',
-            'price.float' => 'O preço precisa ser um número.',
+            'price.integer' => 'O preço precisa ser um número.',
 
             'image' => 'nullable.',
 
