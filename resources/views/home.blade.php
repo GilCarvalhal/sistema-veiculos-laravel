@@ -1,4 +1,14 @@
-@extends('layouts.app')
+<div class="form-group col-sm-12 col-md-4 mb-3">
+    <label for="price">Preço</label>
+    <input type="text" class="form-control" id="price" name="price" autocomplete="off"
+        value="{{ isset($item) ? $item->price : old('price') }}">
+
+    @error('price')
+        <div class="alert alert-danger mt-3">
+            {{ $message }}
+        </div>
+    @enderror
+</div>@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -37,6 +47,12 @@
 
             </form>
         </div>
+
+        @if (session('message'))
+            <div class="alert alert-success w-100">
+                {{ session('message') }}
+            </div>
+        @endif
 
         <div class="row justify-content-center">
             <div class="col-9">
