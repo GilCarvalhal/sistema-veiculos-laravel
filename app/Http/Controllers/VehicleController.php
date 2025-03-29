@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\VehicleRequest;
 use App\Repositories\VehicleRepository;
+use Illuminate\Support\Facades\View;
 
 class VehicleController extends Controller
 {
@@ -42,5 +43,13 @@ class VehicleController extends Controller
         }
 
         return redirect()->route("home")->with("message", "Veículo cadastrado com sucesso");
+    }
+
+    public function index()
+    {
+        $perPage = 10;
+        $items = $this->vehicleRepository->paginate($perPage);
+
+        return view("home", compact("items"));
     }
 }
