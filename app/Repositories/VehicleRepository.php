@@ -3,11 +3,13 @@
 namespace App\Repositories;
 
 use App\Models\Vehicle;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class VehicleRepository
 {
     /**
-     * 
+     *
      * @var
      */
     private $model;
@@ -29,5 +31,17 @@ class VehicleRepository
     public function store(array $data): Vehicle
     {
         return $this->model->create($data);
+    }
+
+    /**
+     * 
+     * @param int $perPage
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function paginate(int $perPage = 10): LengthAwarePaginator
+    {
+        $vehicles = QueryBuilder::for(Vehicle::class)->paginate($perPage);
+
+        return $vehicles;
     }
 }
