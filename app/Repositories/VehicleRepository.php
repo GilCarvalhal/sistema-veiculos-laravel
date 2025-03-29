@@ -60,4 +60,15 @@ class VehicleRepository
 
         return $vehicle;
     }
+
+    public function update(int $id, array $data)
+    {
+        $vehicle = $this->findById($id);
+
+        if (!$vehicle) {
+            return false;
+        };
+
+        return $vehicle->update($data);
+    }
 }

@@ -58,4 +58,24 @@ class VehicleController extends Controller
 
         return view("form", ["item" => $item]);
     }
+
+    public function update(VehicleRequest $request, int $id)
+    {
+        $data = $request->validated();
+
+        if ($request->file("image")) {
+            $file = $request->file("image");
+            $filename = date("YmdHi") . $file->getClientOriginalName();
+            $file->move(public_path("/assets/images"), $filename);
+            $data["image"] = $filename;
+        }
+
+        $update = $this->vehicleRepository->update($id, $data);
+
+        if (!$update) {
+            return redirect()->back()->with("error", "Erro ao atualizar veículo");
+        }
+
+        return redirect()->route("home")->with("message", "Veículo atualizado com sucesso");
+    }
 }
