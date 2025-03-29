@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\VehicleRequest;
 use App\Repositories\VehicleRepository;
+use Illuminate\Http\RedirectResponse;
 
 class VehicleController extends Controller
 {
@@ -59,7 +60,7 @@ class VehicleController extends Controller
         return view("form", ["item" => $item]);
     }
 
-    public function update(VehicleRequest $request, int $id)
+    public function update(VehicleRequest $request, int $id): RedirectResponse
     {
         $data = $request->validated();
 
@@ -77,5 +78,16 @@ class VehicleController extends Controller
         }
 
         return redirect()->route("home")->with("message", "Veículo atualizado com sucesso");
+    }
+
+    public function delete(int $id): RedirectResponse
+    {
+        $delete = $this->vehicleRepository->delete($id);
+
+        if (!$delete) {
+            return redirect()->back()->with("error", "Erro ao excluir veículo");
+        }
+
+        return redirect()->route("home")->with("message", "Veículo excluído com sucesso");
     }
 }

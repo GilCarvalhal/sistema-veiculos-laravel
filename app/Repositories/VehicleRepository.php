@@ -71,4 +71,15 @@ class VehicleRepository
 
         return $vehicle->update($data);
     }
+
+    public function delete(int $id)
+    {
+        $vehicle = $this->findById($id);
+
+        if (!$vehicle) {
+            return false;
+        };
+
+        return $vehicle->delete($id);
+    }
 }
