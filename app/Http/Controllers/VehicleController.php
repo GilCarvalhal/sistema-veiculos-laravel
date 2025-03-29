@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\VehicleRequest;
 use App\Repositories\VehicleRepository;
-use Illuminate\Support\Facades\View;
 
 class VehicleController extends Controller
 {

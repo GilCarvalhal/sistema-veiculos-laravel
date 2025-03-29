@@ -10,4 +10,4 @@ Route::post('/vehicle', [VehicleController::class, 'store'])->name('vehicle.stor
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [VehicleController::class, 'index'])->name('home');
