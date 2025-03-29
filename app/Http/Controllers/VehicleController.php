@@ -17,7 +17,11 @@ class VehicleController extends Controller
 
     public function listVehicles()
     {
-        return view("index");
+
+        $perPage = 6;
+        $items = $this->vehicleRepository->paginate($perPage);
+
+        return view("index", ['items' => $items]);
     }
 
     public function create()
