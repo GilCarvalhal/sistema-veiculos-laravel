@@ -90,26 +90,31 @@
             </div>
 
             <div class="col-9">
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="{{ asset('./assets/images/lamborghini-sian-fkp-37.jpg') }}" alt="Lamborguini"
-                                class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title md-2">Título</h5>
-                                <p class="card-text text-secondary mb-2">texto</p>
-                                <h5>R$ 100,00</h5>
-                                <div class="actions">
-                                    <a href="#" class="btn btn-primary">Editar</a>
-                                    <button class="btn btn-primary">Excluir</button>
+
+                @forelse ($items as $item)
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{ asset('./assets/images/lamborghini-sian-fkp-37.jpg') }}" alt="Lamborguini"
+                                    class="img-fluid rounded-start">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title md-2">Título</h5>
+                                    <p class="card-text text-secondary mb-2">texto</p>
+                                    <h5>R$ 100,00</h5>
+                                    <div class="actions">
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <button class="btn btn-primary">Excluir</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
+        @empty
+            <p>Nenhum veículo encontrado</p>
+            @endforelse
         </div>
 
     </div>
