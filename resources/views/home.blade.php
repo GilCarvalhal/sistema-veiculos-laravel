@@ -67,7 +67,10 @@
                         </div>
                     </div>
                 @empty
-                    <p>Nenhum veículo encontrado</p>
+                    <div class="card text-center p-3 d-flex align-items-center">
+                        <img src="{{ asset('./assets/images/empty_state.jpg') }}" alt="empty-state" width="300">
+                        <h4>Nenhum cadastro encontrado</h4>
+                    </div>
                 @endforelse
             </div>
         </div>
