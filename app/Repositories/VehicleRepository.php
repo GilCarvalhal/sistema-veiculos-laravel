@@ -34,13 +34,19 @@ class VehicleRepository
     }
 
     /**
-     * 
+     *
      * @param int $perPage
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
     public function paginate(int $perPage = 10): LengthAwarePaginator
     {
-        $vehicles = QueryBuilder::for(Vehicle::class)->paginate($perPage);
+        $vehicles = QueryBuilder::for(Vehicle::class)
+            ->allowedFilters([
+                'name',
+                'brand',
+                'city',
+            ])
+            ->paginate($perPage);
 
         return $vehicles;
     }
