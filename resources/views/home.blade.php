@@ -59,7 +59,7 @@
                                     <p class="card-text text-secondary mb-2">{{ $item->description }}</p>
                                     <h5>R$ {{ $item->price }}</h5>
                                     <div class="actions">
-                                        <a href="#" class="btn btn-primary">Editar</a>
+                                        <a href="{{ route('vehicle.edit', $item->id) }}" class="btn btn-primary">Editar</a>
                                         <button class="btn btn-primary">Excluir</button>
                                     </div>
                                 </div>

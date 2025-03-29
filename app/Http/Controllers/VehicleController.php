@@ -51,4 +51,11 @@ class VehicleController extends Controller
 
         return view("home", compact("items"));
     }
+
+    public function edit(int $id)
+    {
+        $item = $this->vehicleRepository->findById($id);
+
+        return view("form", ["item" => $item]);
+    }
 }

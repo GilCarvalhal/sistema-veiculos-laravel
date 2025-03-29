@@ -50,4 +50,14 @@ class VehicleRepository
 
         return $vehicles;
     }
+
+    public function findById(int $id)
+    {
+
+        $vehicle = QueryBuilder::for(Vehicle::class)
+            ->where("id", $id)
+            ->first();
+
+        return $vehicle;
+    }
 }
