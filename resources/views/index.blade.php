@@ -94,7 +94,29 @@
 
                                     <h5 class="mb-5">{{ $item->price }}</h5>
                                     <div class="actions">
-                                        <button class="btn btn-primary">Entrar em contato</button>
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#contactModal_{{ $item->id }}">Entrar em contato</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="contactModal_{{ $item->id }}" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">Contato do vendedor</h1>
+                                        <button class="btn-close" type="button" data-bs-dismiss="modal"
+                                            aria-label="close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span><strong>Nome:</strong>{{ $item->contact_name }}</span><br>
+                                        <span><strong>Telefone:</strong>{{ $item->contact_phone }}</span><br>
+                                        <span><strong>E-mail:</strong>{{ $item->contact_mail }}</span><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" type="button"
+                                            data-bs-dismiss="modal">Fechar</button>
                                     </div>
                                 </div>
                             </div>
