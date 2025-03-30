@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Vehicle;
+use App\Utils\Filters\LowerThanFilter;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class VehicleRepository
@@ -45,6 +47,10 @@ class VehicleRepository
                 'name',
                 'brand',
                 'city',
+                'type',
+                AllowedFilter::custom('vehicle_year', new LowerThanFilter),
+                AllowedFilter::custom('kilometers', new LowerThanFilter),
+                AllowedFilter::custom('price', new LowerThanFilter),
             ])
             ->paginate($perPage);
 
