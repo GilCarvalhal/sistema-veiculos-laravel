@@ -12,5 +12,8 @@
 ## Comando para gerar a chave de criptografia:
 >> php artisan key:generate
 
+## Instalação da biblioteca SpatieQueryBuilder
+>> composer require spatie/laravel-query-builder
+
 ## Utilizar dois comandos no terminal (cada um em terminal separado) para inicialização em uso local:
 >> npm run dev && php artisan serve
