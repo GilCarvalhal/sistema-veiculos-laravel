@@ -88,7 +88,7 @@
                                     <h5 class="card-title mb-2">{{ $item->name }}</h5>
                                     <p class="card-text text-secondary mb-2">{{ $item->description }}</p>
                                     <p class="card-text text-secondary mb-2">
-                                        Ano {{ $item->vehicle_year }} / KM {{ $item->kilometers }} / {{ $item->type }}
+                                        Marca {{$item->brand}} / Ano {{ $item->vehicle_year }} / KM {{ $item->kilometers }} / {{ $item->type }}
                                         / {{ $item->city }}
                                     </p>
 
